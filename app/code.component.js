@@ -1,4 +1,4 @@
-System.register(['angular2/core', './code.service', './on-focus.directive', './color-change.directive', './favorite.component', './heart.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './code.service', './on-focus.directive', './color-change.directive', './favorite.component', './heart.component', './up-or-down.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './code.service', './on-focus.directive', './c
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, code_service_1, on_focus_directive_1, color_change_directive_1, favorite_component_1, heart_component_1;
+    var core_1, code_service_1, on_focus_directive_1, color_change_directive_1, favorite_component_1, heart_component_1, up_or_down_component_1;
     var CodeComponent;
     return {
         setters:[
@@ -31,6 +31,9 @@ System.register(['angular2/core', './code.service', './on-focus.directive', './c
             },
             function (heart_component_1_1) {
                 heart_component_1 = heart_component_1_1;
+            },
+            function (up_or_down_component_1_1) {
+                up_or_down_component_1 = up_or_down_component_1_1;
             }],
         execute: function() {
             CodeComponent = (function () {
@@ -44,6 +47,13 @@ System.register(['angular2/core', './code.service', './on-focus.directive', './c
                         liked: false,
                         totalLikes: 10
                     };
+                    this.vote = {
+                        totalLikes: 10
+                    };
+                    this.choice = {
+                        voteCount: 10,
+                        myVote: 0
+                    };
                     this.code = codeService.getCourse();
                 }
                 CodeComponent.prototype.onButtonClick = function ($event) {
@@ -55,15 +65,16 @@ System.register(['angular2/core', './code.service', './on-focus.directive', './c
                 };
                 CodeComponent.prototype.onHeartChange = function ($event) {
                     console.log($event);
-                    // this.heart.liked = !this.heart.liked;
-                    // this.heart.totalLikes += this.heart.liked ? 1 : -1;
+                };
+                CodeComponent.prototype.onVoteChoice = function ($event) {
+                    console.log($event);
                 };
                 CodeComponent = __decorate([
                     core_1.Component({
                         selector: 'code',
-                        template: "\n        <div class=\"col-sm-6\">\n          <h3>Code</h3>\n          <h5 colorChange>this is my sectiong about {{code}}</h5>\n          <input type=\"text\"\n              [value] = \"code\"\n              (input) = \"title = $event.target.value\"\n              autoGrow/>\n          <button type=\"button\"\n              class=\"btn btn-info\"\n              (click) = \"onButtonClick()\"\n              [style.backgroundColor]=\"isActive ? 'orange' : 'blue'\"\n          >Code</button>\n          <ul>\n              <li *ngFor = \"#code of code\">\n              {{code}}<favorite\n              [is-favorite]=\"course.isFavorite\" (changed)=\"onFavoriteChange($event)\"\n              ></favorite>\n              <heart\n              [total-likes]= \"heart.totalLikes\"\n              [likes]= \"heart.liked\"\n              (hearted)=\"onHeartChange($event)\"></heart><span>{{heart.totalLikes}}</span>\n              </li>\n          </ul>\n        </div>\n    ",
+                        templateUrl: './app/code.template.html',
                         providers: [code_service_1.CodeService],
-                        directives: [on_focus_directive_1.OnFocusDirective, color_change_directive_1.ColorChangeDirective, favorite_component_1.FavoriteComponent, heart_component_1.HeartComponent]
+                        directives: [on_focus_directive_1.OnFocusDirective, color_change_directive_1.ColorChangeDirective, favorite_component_1.FavoriteComponent, heart_component_1.HeartComponent, up_or_down_component_1.UpOrDownComponent]
                     }), 
                     __metadata('design:paramtypes', [code_service_1.CodeService])
                 ], CodeComponent);

@@ -1,0 +1,36 @@
+
+<div class="col-sm-6">
+  <h3>Code</h3>
+  <h5 colorChange>this is my sectiong about {{code}}</h5>
+  <vote
+      [voteCount]="choice.voteCount"
+      [myVote] = "choice.myVote"
+      (vote)="onVoteChoice($event)"
+      ></vote>
+  <input
+      type="text"
+      [value] = "code"
+      (input) = "title = $event.target.value"
+      autoGrow/>
+  <button
+      type="button"
+      class="btn btn-info"
+      (click) = "onButtonClick()"
+      [style.backgroundColor]="isActive ? 'orange' : 'blue'"
+  >Code</button>
+  <ul>
+      <li *ngFor = "#code of code">
+        {{code}}
+        <favorite
+        [is-favorite]="course.isFavorite" (changed)="onFavoriteChange($event)"
+        ></favorite>
+        <heart
+        [total-likes]= "heart.totalLikes"
+        [likes]= "heart.liked"
+        (hearted)="onHeartChange($event)"
+        ></heart>
+        <span>{{heart.totalLikes}}
+        </span>
+      </li>
+  </ul>
+</div>

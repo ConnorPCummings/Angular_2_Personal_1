@@ -4,37 +4,13 @@ import {OnFocusDirective} from './on-focus.directive';
 import {ColorChangeDirective} from './color-change.directive';
 import {FavoriteComponent} from './favorite.component';
 import {HeartComponent} from './heart.component';
+import {UpOrDownComponent} from './up-or-down.component';
 
 @Component({
     selector: 'code',
-    template: `
-        <div class="col-sm-6">
-          <h3>Code</h3>
-          <h5 colorChange>this is my sectiong about {{code}}</h5>
-          <input type="text"
-              [value] = "code"
-              (input) = "title = $event.target.value"
-              autoGrow/>
-          <button type="button"
-              class="btn btn-info"
-              (click) = "onButtonClick()"
-              [style.backgroundColor]="isActive ? 'orange' : 'blue'"
-          >Code</button>
-          <ul>
-              <li *ngFor = "#code of code">
-              {{code}}<favorite
-              [is-favorite]="course.isFavorite" (changed)="onFavoriteChange($event)"
-              ></favorite>
-              <heart
-              [total-likes]= "heart.totalLikes"
-              [likes]= "heart.liked"
-              (hearted)="onHeartChange($event)"></heart><span>{{heart.totalLikes}}</span>
-              </li>
-          </ul>
-        </div>
-    `,
+    templateUrl: './app/code.template.html',
     providers:[CodeService],
-    directives: [OnFocusDirective, ColorChangeDirective, FavoriteComponent,HeartComponent]
+    directives: [OnFocusDirective, ColorChangeDirective, FavoriteComponent,HeartComponent, UpOrDownComponent]
 
 })
 
@@ -49,6 +25,13 @@ export class CodeComponent{
       liked: false,
       totalLikes: 10
     }
+    vote={
+      totalLikes: 10
+    }
+    choice={
+      voteCount : 10,
+      myVote : 0
+    }
     onButtonClick($event){
         console.log($event);
         this.isActive = !this.isActive;
@@ -58,9 +41,9 @@ export class CodeComponent{
     }
     onHeartChange($event){
       console.log($event);
-      // this.heart.liked = !this.heart.liked;
-      // this.heart.totalLikes += this.heart.liked ? 1 : -1;
-
+    }
+    onVoteChoice($event){
+      console.log($event);
     }
     constructor(codeService: CodeService){
       this.code = codeService.getCourse();

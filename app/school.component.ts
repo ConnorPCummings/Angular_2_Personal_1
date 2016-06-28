@@ -22,8 +22,7 @@ import {HeartComponent} from './heart.component';
           <heart
           [total-likes]="heart.totalLikes"
           [likes]="heart.liked"
-          (hearted) = "onHeartChange($event)"
-          ></heart>
+          (hearted) = "onHeartChange($event)"></heart>
           </li>
       </ul>
     </div>
