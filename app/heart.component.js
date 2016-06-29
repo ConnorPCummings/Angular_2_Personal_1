@@ -46,7 +46,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 HeartComponent = __decorate([
                     core_1.Component({
                         selector: "heart",
-                        template: "\n      <i class=\"glyphicon glyphicon-heart\"\n        [class.liked] = \"iLike\"\n        [class.glyphicon-heart] = \"!iLiked\"\n        (click)=\"onClick()\"\n      ></i>\n      ",
+                        template: "\n      <i class=\"glyphicon glyphicon-heart\"\n        [class.liked] = \"iLike\"\n        [class.glyphicon-heart] = \"!iLiked\"\n        (click)=\"onClick()\"\n      ></i>\n      <span>{{totalLikes}}</span>\n      ",
                         styles: ["\n        .glyphicon-heart{\n            color:grey;\n        }\n        .liked{\n            color:hotpink;\n        }"]
                     }), 
                     __metadata('design:paramtypes', [])

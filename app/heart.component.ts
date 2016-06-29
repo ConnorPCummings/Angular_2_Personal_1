@@ -8,6 +8,7 @@ import {Component, Input, Output, EventEmitter} from 'angular2/core';
         [class.glyphicon-heart] = "!iLiked"
         (click)="onClick()"
       ></i>
+      <span>{{totalLikes}}</span>
       `,
       styles: [`
         .glyphicon-heart{

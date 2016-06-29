@@ -27,6 +27,7 @@ export class CodeComponent{
     }
     vote={
       totalLikes: 10
+
     }
     choice={
       voteCount : 10,
