@@ -27,6 +27,12 @@ import {HeartComponent} from './heart.component';
       </ul>
     </div>
   `,
+  styles: [`
+    div{
+        background:white;
+        border-radius:5px;
+      }
+      `]
   providers: [SchoolService],
   directives: [FavoriteComponent, HeartComponent]
 })

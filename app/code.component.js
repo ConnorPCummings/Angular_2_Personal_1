@@ -73,6 +73,7 @@ System.register(['angular2/core', './code.service', './on-focus.directive', './c
                     core_1.Component({
                         selector: 'code',
                         templateUrl: './app/code.template.html',
+                        styles: ["\n\n      div{\n        background:white;\n        border-radius:5px;\n      }\n      "],
                         providers: [code_service_1.CodeService],
                         directives: [on_focus_directive_1.OnFocusDirective, color_change_directive_1.ColorChangeDirective, favorite_component_1.FavoriteComponent, heart_component_1.HeartComponent, up_or_down_component_1.UpOrDownComponent]
                     }), 

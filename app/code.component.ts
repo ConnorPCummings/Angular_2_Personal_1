@@ -9,6 +9,13 @@ import {UpOrDownComponent} from './up-or-down.component';
 @Component({
     selector: 'code',
     templateUrl: './app/code.template.html',
+    styles:[`
+
+      div{
+        background:white;
+        border-radius:5px;
+      }
+      `],
     providers:[CodeService],
     directives: [OnFocusDirective, ColorChangeDirective, FavoriteComponent,HeartComponent, UpOrDownComponent]
 
