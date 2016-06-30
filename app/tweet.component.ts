@@ -17,7 +17,6 @@ import {TweetService} from './tweet.service';
             <h4 class="media-heading">
               {{data.author}}  <span>{{data.handle}}</span>
             </h4>
-
             <p>
               {{data.body}}
             </p>
@@ -28,6 +27,14 @@ import {TweetService} from './tweet.service';
   </div>
 
   `,
+  styles:[`
+      h4{
+        color:white;
+      }
+      p{
+        color:white;
+      }
+    `],
   directives: [HeartComponent]
 })
 export class TweetComponent{

@@ -32,7 +32,8 @@ System.register(['angular2/core', './heart.component'], function(exports_1, cont
                 TweetComponent = __decorate([
                     core_1.Component({
                         selector: "tweet",
-                        template: "\n    <div class=\"col-sm-6\">\n      <ul class=\"media-list\">\n        <li class=\"media\">\n          <div class=\"media-left\">\n            <a href=\"#\">\n              <img class=\"media-object\" src=\"{{data.imgUrl}}\" alt=\"...\">\n            </a>\n          </div>\n          <div class=\"media-body\">\n            <h4 class=\"media-heading\">\n              {{data.author}}  <span>{{data.handle}}</span>\n            </h4>\n\n            <p>\n              {{data.body}}\n            </p>\n            <heart></heart>\n          </div>\n        </li>\n    </ul>\n  </div>\n\n  ",
+                        template: "\n    <div class=\"col-sm-6\">\n      <ul class=\"media-list\">\n        <li class=\"media\">\n          <div class=\"media-left\">\n            <a href=\"#\">\n              <img class=\"media-object\" src=\"{{data.imgUrl}}\" alt=\"...\">\n            </a>\n          </div>\n          <div class=\"media-body\">\n            <h4 class=\"media-heading\">\n              {{data.author}}  <span>{{data.handle}}</span>\n            </h4>\n            <p>\n              {{data.body}}\n            </p>\n            <heart></heart>\n          </div>\n        </li>\n    </ul>\n  </div>\n\n  ",
+                        styles: ["\n      h4{\n        color:white;\n      }\n      p{\n        color:white;\n      }\n    "],
                         directives: [heart_component_1.HeartComponent]
                     }), 
                     __metadata('design:paramtypes', [])

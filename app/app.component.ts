@@ -20,23 +20,25 @@ import {TweetService} from './tweet.service';
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-12">
-        <div class="col-sm-6">
-          <code></code>
-        </div>
-        <div class="col-sm-6">
-          <school></school>
-        </div>
+      <div class="col-sm-5">
+        <code></code>
+      </div>
+      <div class="col-sm-5">
+        <school></school>
       </div>
     </div>
     <div class="row">
-
-        <div *ngFor="#tweet of tweets" class="col-sm-12">
-          <tweet [data]="tweet" ></tweet>
-        </div>
-
+      <div *ngFor="#tweet of tweets" class="col-sm-12">
+        <tweet [data]="tweet" ></tweet>
+      </div>
     </div>
     `,
+    styles:[`
+      .col-sm-6{
+        margin-right:auto;
+        margin-left:auto;
+      }
+      `],
     directives: [CoursesComponent, CodeComponent,SchoolComponent,TweetComponent],
     providers: [TweetService]
 
